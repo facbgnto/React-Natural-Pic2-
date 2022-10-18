@@ -11,3 +11,7 @@ body {
 h1 {
   margin-bottom: 0;
 }
+.corazon{
+  border: red 2px solid;
+  text-align: right;
+}
