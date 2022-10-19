@@ -1,11 +1,14 @@
 
+import react from "react";
+import Galeria from "../components/Galeria";
+import "../assets/css/galeria.css";
 import Heart from "../components/Heart";
 import Context from "../../src/Context"
 import { useState, useEffect, useContext } from "react"; 
 
 
 export default function Favoritos() {
-  const [busqueda, setBusqueda] = useState([]);
+
   const { galeria, setGaleria } = useContext(Context);
 
 
@@ -15,7 +18,7 @@ export default function Favoritos() {
       <div className="p-3 galeria grid-columns-4">
       {galeria.map((data) => {
          return( data.liked ? (
-                    <div className="foto" key={data.id} style={{background: `url(${data.src.tiny})` }}  >
+                    <div className="foto" key={data.id} style={{background: `url(${data.src.medium})` }}  >
      
             <div >
               <div onClick={()=>{
@@ -27,7 +30,7 @@ export default function Favoritos() {
                             setGaleria([...galeria])
 
                           }} >  
-                        <Heart filled={data.liked}/>
+                        <Heart  filled={data.liked}/>
 
               </div>
             </div>

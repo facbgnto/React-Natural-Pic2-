@@ -1,16 +1,12 @@
-import 'bootstrap/dist/css/bootstrap.min.css';
 import "../assets/css/galeria.css";
-import { useState, useEffect, useContext } from "react"; 
+
+import { useContext } from "react"; 
 import Heart from "./Heart";
 import Context from "../../src/Context"
-import { forEachTrailingCommentRange } from "typescript";
+
 
 export default function Galeria() {
   const { galeria, setGaleria } = useContext(Context);
-
-
-
-  
 
   return (
     <div className="galeria grid-columns-5 p-3">
@@ -18,7 +14,7 @@ export default function Galeria() {
          return(
           <div>
             
-          <div className="foto" key={data.id} style={{background: `url(${data.src.tiny})` }}  >
+          <div className="foto" key={data.id} style={{background: `url(${data.src.medium})` }}  >
              
             <div >
               <div onClick={()=>{
@@ -30,8 +26,9 @@ export default function Galeria() {
                             setGaleria([...galeria])
 
                           }}  >  
-                        <Heart filled={data.liked}/>
-
+                       
+                            <Heart  filled={data.liked}/>
+                        
               </div>
             </div>
             <p>{data.alt}</p>
