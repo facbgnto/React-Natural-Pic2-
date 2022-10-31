@@ -12,7 +12,7 @@ export default function App() {
  
   const [galeria, setGaleria] = useState([]);
   const globalState = { galeria, setGaleria};
-  const endpoint = "./React-Natural-Pic2-/fotos.json";
+  const endpoint = "/React-Natural-Pic2-/fotos.json";
 
   const [info, setInfo] = useState([]);
 
