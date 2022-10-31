@@ -1,3 +1,5 @@
+
+
 import "../assets/css/galeria.css";
 
 import { useContext } from "react"; 
@@ -8,14 +10,14 @@ import Context from "../../src/Context"
 export default function Galeria() {
   const { galeria, setGaleria } = useContext(Context);
 
+  
   return (
     <div className="galeria grid-columns-5 p-3">
-     {galeria.map((data) => {
+     {galeria.map((data, index) => {
          return(
           <div>
             
-          <div className="foto" key={data.id} style={{background: `url(${data.src.medium})` }}  >
-             
+          <div className="foto" key={index.toString()} style={{background: `url(${data.src.medium})` }}  >
             <div >
               <div onClick={()=>{
         
@@ -25,10 +27,11 @@ export default function Galeria() {
                             console.log(galeria[index].liked )
                             setGaleria([...galeria])
 
-                          }}  >  
-                       
-                            <Heart  filled={data.liked}/>
-                        
+                          }}  > 
+
+                   
+                     <Heart   filled={data.liked}/>
+                      
               </div>
             </div>
             <p>{data.alt}</p>

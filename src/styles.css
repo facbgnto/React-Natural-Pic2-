@@ -11,9 +11,3 @@ body {
 h1 {
   margin-bottom: 0;
 }
-
-
-.galeria .foto svg {
-  align-self: flex-end;
-  text-align: right;
-}
